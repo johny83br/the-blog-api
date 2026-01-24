@@ -1,8 +1,10 @@
-import { Injectable } from '@nestjs/common';
+import { Body, Injectable } from '@nestjs/common';
+import { LoginDto } from './dto/login.dto';
 
 @Injectable()
 export class AuthService {
-  login(): string {
-    return 'Login successful';
+  login(@Body() loginDto: LoginDto) {
+    console.log(loginDto.email, loginDto.password);
+    return loginDto;
   }
 }
