@@ -10,5 +10,6 @@ import { Repository } from 'typeorm';
   imports: [TypeOrmModule.forFeature([User]), CommonModule, Repository<User>],
   providers: [UserService],
   controllers: [UserController],
+  exports: [UserService],
 })
 export class UserModule {}

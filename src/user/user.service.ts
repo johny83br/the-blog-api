@@ -34,7 +34,19 @@ export class UserService {
     return createdUser;
   }
 
-  async get(id: string) {
+  get(id: string) {
     return this.userRepository.findOneBy({ id });
+  }
+
+  getAll() {
+    return this.userRepository.find();
+  }
+
+  findByEmail(email: string) {
+    return this.userRepository.findOneBy({ email });
+  }
+
+  update(id: string, data: Partial<User>) {
+    return this.userRepository.update(id, data);
   }
 }

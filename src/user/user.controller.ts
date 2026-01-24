@@ -15,4 +15,9 @@ export class UserController {
   async get(@Param('id') id: string) {
     return this.userService.get(id);
   }
+
+  @Get()
+  async getAll() {
+    return this.userService.getAll();
+  }
 }
