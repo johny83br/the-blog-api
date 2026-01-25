@@ -2,7 +2,7 @@
 @jwtToken = {{authLogin.response.body.accessToken}}
 @userEmailForTesting = jonata.marcelino83@gmail.com
 @userPasswordForTesting = 123456
-@userNameForTesting = "Jonata Marcelino"
+@userNameForTesting = Jonata Marcelino
 
 # AUTH ########################################################################
 
@@ -27,6 +27,16 @@ Content-Type: application/json
   "name": "{{userNameForTesting}}",
   "email": "{{userEmailForTesting}}",
   "password": "{{userPasswordForTesting}}"
+}
+
+### Update user
+# @name updateUser
+PATCH {{baseUrl}}/user/me
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+{
+  "email": "jonata.marcelino83@gmail.com"
 }
 
 ### Get user

@@ -30,7 +30,7 @@ export class AuthService {
     }
 
     user.forceLogout = false;
-    await this.userService.update(user.id, user);
+    await this.userService.save(user);
 
     const jwtPayload: JwtPayload = {
       sub: user.id,
