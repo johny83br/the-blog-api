@@ -1,1 +1,36 @@
-GET http://localhost:3000/
+@baseUrl = http://localhost:3000
+@jwtToken = {{authLogin.response.body.accessToken}}
+@userEmailForTesting = jonata.marcelino83@gmail.com
+@userPasswordForTesting = 123456
+@userNameForTesting = "Jonata Marcelino"
+
+# AUTH ########################################################################
+
+### Auth login
+# @name authLogin
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "{{userEmailForTesting}}",
+  "password": "{{userPasswordForTesting}}"
+}
+
+# USER ########################################################################
+
+### Create user
+# @name createUser
+POST {{baseUrl}}/user
+Content-Type: application/json
+
+{
+  "name": "{{userNameForTesting}}",
+  "email": "{{userEmailForTesting}}",
+  "password": "{{userPasswordForTesting}}"
+}
+
+### Get user
+# @name getUser
+GET {{baseUrl}}/user/5f7757f1-1b70-420d-b04c-b4735fcd65be
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}

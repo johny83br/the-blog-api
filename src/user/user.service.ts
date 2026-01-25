@@ -46,6 +46,10 @@ export class UserService {
     return this.userRepository.findOneBy({ email });
   }
 
+  findById(id: string) {
+    return this.get(id);
+  }
+
   update(id: string, data: Partial<User>) {
     return this.userRepository.update(id, data);
   }
