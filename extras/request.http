@@ -6,8 +6,8 @@
 @imagePath = {{uploadImage.response.body.url}}
 @imageUrl = {{baseUrl}}{{imagePath}}
 
-@userNameForTesting = Luiz
-@userEmailForTesting = luiz@email.com
+@userNameForTesting = joao
+@userEmailForTesting = joao@email.com
 @userPasswordForTesting = 123456
 @userNewPasswordForTesting = 123456
 
@@ -78,7 +78,7 @@ Authorization: Bearer {{jwtToken}}
 
 {
   "title": "Título do post",
-  "excerpt": "Excerto",
+  "excerpt": "Excerto do post",
   "content": "Conteúdo"
 }
 
