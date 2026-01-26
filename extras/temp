@@ -26,6 +26,6 @@ OK  /posts/me/[id]       GET         Post de um usuário      JWT
 OK  /posts/me/[id]       PATCH       Atualizar um post       JWT
 OK  /posts/me/[id]       DELETE      Apagar um post          JWT
 
-    /upload              POST        Enviar imagem           JWT
-    /uploads/img.jpg     GET/NGINX   Ver imagem              Aberta
+OK  /upload              POST        Enviar imagem           JWT
+OK  /uploads/img.jpg     GET/NGINX   Ver imagem              Aberta
 ```

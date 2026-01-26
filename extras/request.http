@@ -7,8 +7,8 @@
 @imageUrl = {{baseUrl}}{{imagePath}}
 
 @userNameForTesting = joao
-#@userEmailForTesting = joao@email.com
-@userEmailForTesting = jonata.marcelino83@gmail.com
+@userEmailForTesting = joao@email.com
+#@userEmailForTesting = jonata.marcelino83@gmail.com
 @userPasswordForTesting = 123456
 @userNewPasswordForTesting = 123456
 
@@ -129,10 +129,10 @@ Authorization: Bearer {{jwtToken}}
 Content-Type: multipart/form-data; boundary=----BryenFormBoundary
 
 ------BryenFormBoundary
-Content-Disposition: form-data; name="file"; filename="exemplo.png"
+Content-Disposition: form-data; name="file"; filename="image.png"
 Content-Type: image/png
 
-< ../dev/images/sample-image.jpeg
+< ../extras/dev-images/image.png
 ------BryenFormBoundary--
 
 ### Read Image
