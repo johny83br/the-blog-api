@@ -11,6 +11,11 @@
 POST {{baseUrl}}/auth/login
 Content-Type: application/json
 
+# {
+#   "email": "johny21@gmail.com",
+#   "password": "123"
+# }
+
 {
   "email": "{{userEmailForTesting}}",
   "password": "{{userPasswordForTesting}}"
@@ -24,9 +29,9 @@ POST {{baseUrl}}/user
 Content-Type: application/json
 
 {
-  "name": "{{userNameForTesting}}",
-  "email": "{{userEmailForTesting}}",
-  "password": "{{userPasswordForTesting}}"
+  "name": "João",
+  "email": "joao@email.com",
+  "password": "12356"
 }
 
 ### Update user
@@ -36,11 +41,18 @@ Content-Type: application/json
 Authorization: Bearer {{jwtToken}}
 
 {
-  "email": "jonata.marcelino83@gmail.com"
+  "name": "Jônata Marcelino",
+  "email": "joao@email.com"
 }
 
 ### Get user
 # @name getUser
-GET {{baseUrl}}/user/5f7757f1-1b70-420d-b04c-b4735fcd65be
+GET {{baseUrl}}/user/58344732-2d62-4e26-9ac3-52a54cab8499
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+### Get users
+# @name getUsers
+GET {{baseUrl}}/user
 Content-Type: application/json
 Authorization: Bearer {{jwtToken}}

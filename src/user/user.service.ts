@@ -86,6 +86,8 @@ export class UserService {
       user.forceLogout = true;
     }
 
-    return this.userRepository.update(id, user);
+    await this.userRepository.update(id, user);
+
+    return user;
   }
 }
