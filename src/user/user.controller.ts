@@ -1,9 +1,8 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
-  NotFoundException,
-  Param,
   Patch,
   Post,
   Req,
@@ -15,6 +14,7 @@ import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import type { AuthenticatedRequest } from 'src/auth/types/authenticated-request';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UserResponseDto } from './dto/user-response.dto';
+import { UpdatePasswordDto } from './dto/update-password.dto';
 
 @Controller('user')
 export class UserController {
@@ -26,27 +26,6 @@ export class UserController {
     return new UserResponseDto(user);
   }
 
-  @Get()
-  async getAll(): Promise<UserResponseDto[]> {
-    const users = await this.userService.getAll();
-    return users.map(user => new UserResponseDto(user));
-  }
-
-  @UseGuards(JwtAuthGuard)
-  @Get(':id')
-  async get(
-    @Req() req: AuthenticatedRequest,
-    @Param('id') id: string,
-  ): Promise<UserResponseDto> {
-    const user = await this.userService.get(id);
-
-    if (!user) {
-      throw new NotFoundException('Usuário não encontrado');
-    }
-
-    return new UserResponseDto(user);
-  }
-
   @UseGuards(JwtAuthGuard)
   @Patch('me')
   async update(
@@ -54,6 +33,30 @@ export class UserController {
     @Body() dto: UpdateUserDto,
   ): Promise<UserResponseDto> {
     const user = await this.userService.update(req.user.id, dto);
+    return new UserResponseDto(user);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get('me')
+  async get(@Req() req: AuthenticatedRequest): Promise<UserResponseDto> {
+    const user = await this.userService.findOneByOrFail({ id: req.user.id });
+    return new UserResponseDto(user);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Patch('me/password')
+  async updatePassword(
+    @Req() req: AuthenticatedRequest,
+    @Body() dto: UpdatePasswordDto,
+  ): Promise<UserResponseDto> {
+    const user = await this.userService.updatePassword(req.user.id, dto);
+    return new UserResponseDto(user);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Delete('me')
+  async remove(@Req() req: AuthenticatedRequest): Promise<UserResponseDto> {
+    const user = await this.userService.remove(req.user.id);
     return new UserResponseDto(user);
   }
 }
