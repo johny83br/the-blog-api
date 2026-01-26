@@ -1,4 +1,5 @@
 import {
+  IsBoolean,
   IsNotEmpty,
   IsOptional,
   IsString,
@@ -22,4 +23,8 @@ export class CreatePostDto {
   @IsOptional() // Vai ser requerido no Next.js
   @IsUrl({ require_tld: false }, { message: 'URL da imagem de capa inválida' }) // Top level domain proíbe localhost e IP
   coverImageUrl?: string;
+
+  @IsOptional() // Vai depender da lógica que criarmos no service ou no Next.js
+  @IsBoolean({ message: 'Campo de publicar post precisa ser boolean' })
+  published?: boolean;
 }
