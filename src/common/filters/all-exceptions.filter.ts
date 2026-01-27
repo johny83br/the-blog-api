@@ -55,7 +55,7 @@ export class AllExceptionsFilter implements ExceptionFilter {
         (exception as Error).stack || 'sem stack',
       );
     } else {
-      this.logger.warn(`${status} - ${errorName}: ${messages.join(' | ')}`);
+      // this.logger.warn(`${status} - ${errorName}: ${messages.join(' | ')}`);
     }
 
     return response.status(status).json({
