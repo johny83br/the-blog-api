@@ -28,7 +28,6 @@ export class PostService {
       content: dto.content,
       excerpt: dto.excerpt,
       coverImageUrl: dto.coverImageUrl,
-      published: dto.published,
       author,
     });
 

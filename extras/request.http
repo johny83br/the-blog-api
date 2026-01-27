@@ -1,4 +1,4 @@
-@baseUrl = http://localhost:3000
+@baseUrl = http://localhost:3001
 @jwtToken = {{authLogin.response.body.accessToken}}
 
 @postUuid = {{createPostOwned.response.body.id}}
@@ -80,8 +80,7 @@ Authorization: Bearer {{jwtToken}}
 {
   "title": "PUBLISHED Título do post",
   "excerpt": "Excerto do post",
-  "content": "Conteúdo",
-  "published": true
+  "content": "Conteúdo"
 }
 
 ### Read all post public
