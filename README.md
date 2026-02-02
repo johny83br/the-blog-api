@@ -21,9 +21,6 @@ Ele inclui estrutura padrão para:
 - Scripts de desenvolvimento e produção via npm;
 - Configuração de ambiente através de `.env` (modelo já incluso).
 
-> 🔹 _NestJS é um framework progressivo para Node.js que facilita a criação de
-> aplicações escaláveis e testáveis._ ([GitHub][1])
-
 ---
 
 ## 🧠 Funcionalidades
