@@ -28,7 +28,7 @@ Ele inclui estrutura padrão para:
 Este projeto pode oferecer:
 
 - 📄 **CRUD completo de posts** — criar, listar, atualizar e excluir posts;
-- 🔐 **Possível integração de autenticação** (uso de **JWT**);
+- 🔐 **Integração de autenticação com uso do JWT**;
 - 🛠 Organização modular seguindo os conceitos de controllers, services e
   modules;
 - 🔁 Scripts úteis para iniciar o projeto em ambientes de desenvolvimento e
