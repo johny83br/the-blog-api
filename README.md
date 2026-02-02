@@ -40,14 +40,39 @@ Este projeto pode oferecer:
 
 ---
 
+## 🔃 Rotas
+
+| Rota               | Método    | Descrição            | Aberta ou Fechada |
+| ------------------ | --------- | -------------------- | ----------------- |
+| /auth/login        | POST      | Autenticar usuário   | Aberta            |
+| /users/            | POST      | Criar usuário        | Aberta            |
+| /users/me          | PATCH     | Atualizar usuário    | Fechada (JWT)     |
+| /users/me          | DELETE    | Apagar usuário       | Fechada (JWT)     |
+| /users/me          | GET       | Ver dados do usuário | Fechada (JWT)     |
+| /users/me/password | PATCH     | Atualizar senha      | Fechada (JWT)     |
+| /posts/            | GET       | Ver todos os posts   | Aberta            |
+| /posts/[slug]      | GET       | Ver um post          | Aberta            |
+| /posts/me          | POST      | Criar post           | Fechada (JWT)     |
+| /posts/me          | GET       | Posts de um usuário  | Fechada (JWT)     |
+| /posts/me/[id]     | GET       | Post de um usuário   | Fechada (JWT)     |
+| /posts/me/[id]     | PATCH     | Atualizar um post    | Fechada (JWT)     |
+| /posts/me/[id]     | DELETE    | Apagar um post       | Fechada (JWT)     |
+| /upload            | POST      | Enviar imagem        | Fechada (JWT)     |
+| /uploads/img.jpg   | GET/NGINX | Ver imagem           | Aberta            |
+
+---
+
 ## 🧩 Tecnologias Utilizadas
 
-| Tecnologia     | Função                                   |
-| -------------- | ---------------------------------------- |
-| **NestJS**     | Framework backend com suporte TypeScript |
-| **TypeScript** | Linguagem base do projeto                |
-| **Node.js**    | Ambiente de execução JavaScript          |
-| **npm**        | Gerenciador de pacotes e dependências    |
+| Tecnologia         | Função                                                         |
+| ------------------ | -------------------------------------------------------------- |
+| **NestJS**         | Framework backend com suporte TypeScript                       |
+| **TypeScript**     | Linguagem base do projeto                                      |
+| **Node.js**        | Ambiente de execução JavaScript                                |
+| **npm**            | Gerenciador de pacotes e dependências                          |
+| **nginx**          | Servidor web                                                   |
+| **pm2**            | Gerenciador de processos de Produção Node.js com Load Balancer |
+| **Github Actions** | Para CI/CD automatizando o desenvolvimento, teste, e entrega   |
 
 ---
 
@@ -112,12 +137,8 @@ npm run test:cov
 
 ## 💡 Contribuição
 
-Se quiser contribuir:
-
-1. Faça um **fork** do projeto.
-2. Crie uma **branch com o nome da sua feature** (`feat/minha-feature`).
-3. Faça **commits claros e descritivos**.
-4. Envie um **pull request** para revisão.
+Contribuições são sempre bem-vindas! Se quiser adicionar mais recursos como
+testes adicionais, abra uma _issue_ no repositório 😊
 
 ---
 
