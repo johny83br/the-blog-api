@@ -70,6 +70,7 @@ Este projeto pode oferecer:
 | **nginx**          | Servidor web                                                   |
 | **pm2**            | Gerenciador de processos de Produção Node.js com Load Balancer |
 | **Github Actions** | Para CI/CD automatizando o desenvolvimento, teste, e entrega   |
+| **SQLite**         | Para armazenamento de dados                                    |
 
 ---
 
